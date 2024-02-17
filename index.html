@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Task 1</title>
+    <script>
+        window.addEventListener("load", function(){
+            var myVideo = document.getElementById("videoElem");
+            myVideo.muted = true;
+            myVideo.play();
+            myVideo.addEventListener("dblclick", function(){
+                this.requestFullscreen();
+            })
+
+            myVideo.addEventListener("click", playPause)
+
+            function playPause(e) {
+                if(e.target.paused)
+                {
+                    e.target.play();
+                    myVideo.muted = false;
+                } else {
+                    e.target.pause();
+                }
+            }
+
+            document.getElementById("videoBtns").addEventListener("click",function(e){
+                if(e.target.nodeName == "BUTTON")
+                {   
+                    document.getElementById("videoElem").setAttribute("src", e.target.dataset.source);
+                    document.getElementById("videoElem").play();
+                }
+            })
+
+        })
+        
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="videosBtns" id="videoBtns">
+            <button data-source="images/universe.mp4">Video1</button>
+            <button data-source="images/universe.mp4">Video2</button>
+            <button data-source="images/universe.mp4">Video3</button>
+            <button data-source="images/universe.mp4">Video4</button>
+            <button data-source="images/universe.mp4">Video5</button>
+            <button data-source="images/universe.mp4">Video6</button>
+            <button data-source="images/universe.mp4">Video7</button>
+            <button data-source="images/universe.mp4">Video8</button>
+            <button data-source="images/universe.mp4">Video9</button>
+            <button data-source="images/universe.mp4">Video10</button>
+        </div>
+        <div class="video">
+            <video id="videoElem" src="images/universe.mp4">
+        </div>
+    </div>
+</body>
+</html>

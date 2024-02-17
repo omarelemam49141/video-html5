@@ -1,0 +1,82 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: 90vw;
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 50px auto;
+    display: flex;
+    gap: 20px;
+}
+
+.videosBtns {
+    transition: all 1s;
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 20px 20px 20px orange inset, -20px -20px 20px red inset;
+}
+
+.videosBtns:hover {
+    box-shadow: -20px -20px 20px orange inset, 20px 20px 20px red inset;
+}
+
+.videosBtns button {
+    cursor: pointer;
+    border: 2px solid rgb(200, 178, 57);
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 5px;
+    color: red;
+    transition: transform 1s, background-color 0.5s;
+}
+
+.videosBtns button:hover {
+    transform: rotateZ(360deg) scale(1.1);
+}
+
+.videosBtns button:active {
+    background-color: aqua;
+}
+
+
+.videosBtns button.active {
+    background-color: aqua;
+}
+
+/*start video*/
+.video {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px orange inset, -10px -10px 0px orange inset;
+}
+
+.video video {
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+    transition: all 1s;
+}
+
+.video video:hover {
+    width: 100%;
+    height: 100%;
+}
+
